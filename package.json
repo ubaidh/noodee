@@ -1,0 +1,22 @@
+{
+  "name": "noodee",
+  "version": "1.0.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "start": "tsc -w"
+  },
+  "author": "ubaid khatlani",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "bin": {
+    "noodee": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ]
+}
