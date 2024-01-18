@@ -33,5 +33,18 @@
     "undici-types": "^5.26.5",
     "v8-compile-cache-lib": "^3.0.1",
     "yn": "^3.1.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ubaidh/noodee.git"
+  },
+  "keywords": [
+    "node",
+    "boiler",
+    "plate"
+  ],
+  "bugs": {
+    "url": "https://github.com/ubaidh/noodee/issues"
+  },
+  "homepage": "https://github.com/ubaidh/noodee#readme"
 }
