@@ -1,34 +1,9 @@
 #!/usr/bin/env node
 import * as fs from 'fs';
 import * as path from 'path';
-import { execSync } from 'child_process';
-function createDirectory(dirPath: string): void {
-    if (!fs.existsSync(dirPath)) {
-        fs.mkdirSync(dirPath);
-        console.log(`Directory created: ${dirPath}`);
-    }
-}
-function createFile(filePath: string, fileContent: string): void {
-    if (!fs.existsSync(filePath)) {
-        fs.writeFileSync(filePath, fileContent);
-        console.log(`File created: ${filePath}`);
-    }
-}
-function initializeNodeProject(projectPath: string): void {
-    execSync('npm init -y', { cwd: projectPath });
-    console.log(`Node.js project initialized in ${projectPath}`);
-    const packages = [
-        "bcrypt",
-        "cors",
-        "dotenv",
-        "express",
-        "morgan",
-        "mysql2",
-        "sequelize",
-    ];
-    execSync(`npm install ${packages.join(' ')}`, { cwd: projectPath });
-    console.log('Required packages installed');
-}
+import { createFile, createDirectory, initializeNodeProject } from './util.exports'
+
+
 function createProjectDirectory(projectName: string): void {
     if (!projectName) {
         console.error('Please specify a project name.');
@@ -40,7 +15,7 @@ function createProjectDirectory(projectName: string): void {
         initializeNodeProject(projectPath);
         console.log(`Project directory created: ${projectPath}`);
         const serverfilecontent =
-        `const express = require("express");
+            `const express = require("express");
         const http = require("http");
         const logger = require("morgan");
         const cors = require("cors");
@@ -110,7 +85,7 @@ function createProjectDirectory(projectName: string): void {
         DB_DIALECT=mysql`
         );
         createFile(path.join(projectPath, '.gitignore'),
-        `node_modules
+            `node_modules
         .env
         .vscode
         .idea
@@ -155,7 +130,7 @@ function createProjectDirectory(projectName: string): void {
         module.exports = db;`
         );
         createFile(path.join(projectPath, 'src', 'routes', 'api', 'v1', 'test.js'),
-        `var express = require("express");
+            `var express = require("express");
         var router = express.Router();
         module.exports = function (models, express) {
             router.get("/test", function (req, res) {

@@ -1,6 +1,6 @@
 {
   "name": "noodee",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "noodee is a Node.js global package that streamlines the setup process of new Node.js projects. It creates a project directory with a standard structure, initializes a Node.js environment, and sets up a basic Express server with Sequelize for database interactions.",
   "main": "index.js",
   "publishConfig": {
