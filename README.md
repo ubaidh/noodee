@@ -23,6 +23,7 @@ To install the package globally, run:
 
 ```bash
 npm install -g noodee
+Or
 npx install noodee
 ```
 
