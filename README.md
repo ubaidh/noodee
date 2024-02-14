@@ -22,7 +22,8 @@ noodee is a Node.js global package that streamlines the setup process of new Nod
 To install the package globally, run:
 
 ```bash
-npm install -g noodee 
+npm install -g noodee
+npx install noodee
 ```
 
 ## Usage
